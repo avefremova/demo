@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,10 +22,12 @@ namespace App
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
+        { 
+
+//kjbjhjhjh
             openFileDialog1.Filter = "JPEG images|*.jpg";
             openFileDialog1.InitialDirectory = "C:\\Users\\lickett2019\\Downloads";
-            openFileDialog1.Title = "Выбрать картинку";
+            openFileDialog1.Title = "??????? ????????";
             if(openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 filename = openFileDialog1.FileName;
@@ -38,15 +40,15 @@ namespace App
             connection.Open();
             try
             {
-                SqlCommand command = new SqlCommand("INSERT INTO tkani (Название,Рисунок) VALUES (@name,'"+filename+"')", connection);
+                SqlCommand command = new SqlCommand("INSERT INTO tkani (????????,???????) VALUES (@name,'"+filename+"')", connection);
                 command.Parameters.AddWithValue("@name", textBox1.Text);
                 command.ExecuteNonQuery();
                 connection.Close();
-                MessageBox.Show("Ткань успешно добавлена!\n");
+                MessageBox.Show("????? ??????? ?????????!\n");
             }
             catch
             {
-                MessageBox.Show("Ошибка при добавлении ткани!\n");
+                MessageBox.Show("?????? ??? ?????????? ?????!\n");
 
             }
         }
